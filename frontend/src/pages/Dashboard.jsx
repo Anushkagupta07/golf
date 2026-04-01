@@ -17,7 +17,7 @@ function Dashboard(){
    fetchWins();
   }
 
- },[user_id]);
+ },[]);
 
 
  const fetchScores = async()=>{
