@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Dashboard(){
@@ -10,60 +10,56 @@ function Dashboard(){
 
  const user_id = stored?.user?.id;
 
- 
+
+ useEffect(()=>{
+
+  const fetchScores = async()=>{
+
+   try{
+
+    const res = await axios.get(
+     `https://golf-backend-n06r.onrender.com/api/scores/${user_id}`
+    );
+
+    console.log("scores api result",res.data);
+
+    setScores(res.data || []);
+
+   }
+
+   catch(err){
+
+    console.log("FETCH SCORE ERROR:",err);
+
+    setScores([]);
+
+   }
+
+  };
 
 
- const fetchScores = async()=>{
+  const fetchWins = async()=>{
 
-  try{
+   try{
 
-   const res = await axios.get(
+    const res = await axios.get(
+     `https://golf-backend-n06r.onrender.com/api/winners/${user_id}`
+    );
 
-    `https://golf-backend-n06r.onrender.com/api/scores/${user_id}`
+    setWins(res.data || []);
 
-   );
+   }
 
-   console.log("scores api result",res.data);
+   catch(error){
 
-   setScores(res.data || []);
+    console.log("WIN API ERROR:",error);
 
-  }
+    setWins([]);
 
-  catch(err){
+   }
 
-   console.log("FETCH SCORE ERROR:",err);
+  };
 
-   setScores([]);
-
-  }
-
- };
-
-
- const fetchWins = async()=>{
-
-  try{
-
-   const res = await axios.get(
-
-    `https://golf-backend-n06r.onrender.com/api/winners/${user_id}`
-
-   );
-
-   setWins(res.data || []);
-
-  }
-
-  catch(error){
-
-   console.log("WIN API ERROR:",error);
-
-   setWins([]);
-
-  }
-
- };
-useEffect(()=>{
 
   if(user_id){
    fetchScores();
@@ -71,6 +67,7 @@ useEffect(()=>{
   }
 
  },[user_id]);
+
 
  if(!stored){
 
@@ -95,52 +92,28 @@ useEffect(()=>{
     <h2>🏌 Last 5 Scores</h2>
 
     {
-
      scores.length===0 ?
-
      <p>No scores yet</p>
-
      :
-
      scores.map((s,index)=>(
-
       <div key={index} className="score-box">
-
        Score: {s.score}
-
       </div>
-
      ))
-
     }
-
-    <br/>
-
-    <button onClick={fetchScores}>
-     Refresh Scores
-    </button>
 
 
     <h2>🎯 Winnings</h2>
 
     {
-
      wins.length===0 ?
-
      <p>No wins yet</p>
-
      :
-
      wins.map(w=>(
-
       <div key={w.id} className="score-box">
-
        Matched {w.match_count}
-
       </div>
-
      ))
-
     }
 
    </div>
