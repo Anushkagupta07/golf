@@ -1,0 +1,352 @@
+/* GLOBAL */
+
+body{
+
+margin:0;
+
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+background:
+linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.95)),
+url("https://golf-backend-n06r.onrender.com/images/golf.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+color:white;
+
+min-height:100vh;
+
+}
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+display:flex;
+align-items:center;
+gap:35px;
+
+padding:18px 40px;
+box-sizing: border-box;
+background:transparent;     /* remove grey */
+backdrop-filter:none;       /* remove blur */
+box-shadow:none;            /* remove shadow */
+
+z-index:1000;
+
+}
+
+
+.navbar a{
+
+color:#cbd5f5;
+
+text-decoration:none;
+
+font-weight:500;
+
+letter-spacing:0.5px;
+
+transition:0.3s;
+}
+
+
+.navbar a:hover{
+
+color:white;
+
+}
+
+
+
+/* PAGE */
+
+.container{
+
+width:80%;
+
+max-width:1100px;
+
+margin:auto;
+
+padding-top:120px;
+
+}
+
+
+
+/* HERO TITLE */
+
+h1{
+
+font-size:78px;
+
+font-weight:800;
+
+letter-spacing:-1.5px;
+
+margin-bottom:25px;
+
+line-height:1.05;
+
+/* background:linear-gradient(90deg,#38bdf8,#818cf8); */
+
+/* -webkit-background-clip:text; */
+
+color:white;
+}
+
+.highlight{
+
+background:linear-gradient(90deg,#38bdf8,#6366f1,#8b5cf6);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+/* SUBTEXT */
+
+p{
+
+color:#94a3b8;
+
+font-size:18px;
+
+max-width:650px;
+
+line-height:1.6;
+}
+
+
+
+/* SECTION HEADINGS */
+
+h2{
+
+font-size:32px;
+
+font-weight:700;
+
+margin-top:60px;
+
+margin-bottom:20px;
+
+color:white;
+}
+
+
+
+/* LIST */
+
+li{
+
+margin-bottom:12px;
+
+font-size:16px;
+
+color:#cbd5f5;
+}
+
+
+
+/* BUTTON */
+
+button{
+
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+
+color:white;
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-size:15px;
+
+margin-top:20px;
+
+transition:0.3s;
+
+font-weight:600;
+}
+
+
+button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 30px rgba(56,189,248,0.35);
+}
+
+
+
+/* REMOVE CARDS COMPLETELY */
+
+.card{
+
+background:none !important;
+
+border:none !important;
+
+box-shadow:none !important;
+
+padding:0 !important;
+
+}
+.nav-right{
+
+margin-left:auto;
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+}
+.nav-left{
+display:flex;
+gap:35px;
+}
+/* CENTER FORM */
+
+.auth-container{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:80vh;
+}
+
+
+/* LOGIN BOX */
+
+.auth-box{
+
+background:rgba(15,23,42,0.65);
+
+padding:50px 55px;
+
+border-radius:22px;
+
+backdrop-filter:blur(14px);
+
+width:420px;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.45);
+
+}
+
+
+/* TITLE */
+
+.auth-box h1{
+
+font-size:42px;
+
+margin-bottom:30px;
+
+}
+
+
+/* INPUT */
+
+.auth-box input{
+
+width:100%;
+
+padding:14px 16px;
+
+margin-bottom:18px;
+
+border-radius:12px;
+
+border:none;
+
+outline:none;
+
+font-size:15px;
+
+background:rgba(255,255,255,0.9);
+
+}
+
+
+/* BUTTON */
+
+.auth-box button{
+
+width:100%;
+
+padding:15px;
+
+font-size:17px;
+
+border-radius:14px;
+
+margin-top:10px;
+
+}
+.admin-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+
+.admin-box{
+
+background:rgba(15,23,42,0.65);
+
+padding:30px;
+
+border-radius:18px;
+
+text-align:center;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 40px rgba(0,0,0,0.35);
+
+}
+
+
+.admin-box h1{
+
+font-size:42px;
+
+margin-top:10px;
+
+}
+
+
+.score-box{
+
+background:rgba(255,255,255,0.05);
+
+padding:12px 15px;
+
+border-radius:10px;
+
+margin-top:10px;
+
+}
