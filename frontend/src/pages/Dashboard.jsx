@@ -10,14 +10,7 @@ function Dashboard(){
 
  const user_id = stored?.user?.id;
 
- useEffect(()=>{
-
-  if(user_id){
-   fetchScores();
-   fetchWins();
-  }
-
- },[]);
+ 
 
 
  const fetchScores = async()=>{
@@ -70,7 +63,14 @@ function Dashboard(){
   }
 
  };
+useEffect(()=>{
 
+  if(user_id){
+   fetchScores();
+   fetchWins();
+  }
+
+ },[user_id]);
 
  if(!stored){
 
